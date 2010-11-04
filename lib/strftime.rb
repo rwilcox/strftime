@@ -66,7 +66,7 @@ module Strftime
       # another example: time_obj.strftime( Strftime::English.encode("Hours", "Minutes", "Seconds", "AM/PM") )
     end
 
-    def availiable_encodings
+    def self.availiable_encodings
       # A documentation method: returns the strings for Strftime::English.encode
     end
 end
