@@ -64,6 +64,9 @@ module Strftime
       # should return "%l%M%S"
       # So you can use it like: time_obj.strftime( Strftime::English.encode(["MilitaryHours", "Minutes", "Seconds"]) )
       # another example: time_obj.strftime( Strftime::English.encode("Hours", "Minutes", "Seconds", "AM/PM") )
+      #
+      # should raise an exception if the string is not found, so you can go fix it
+      # (at least, I think that's a good idea. Maybe I'll make this turn-off-able)
     end
 
     def self.availiable_encodings
