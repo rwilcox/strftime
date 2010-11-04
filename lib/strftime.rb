@@ -54,6 +54,21 @@ module Strftime
     '%Z' => { :description => 'Time zone name'},
     '%%' => { :description => "Literal ``%'' character"}
   })
+
+  class English
+    def self.encode(*params)
+      # takes a list of (English) names and transforms them into the correct
+      # strf constants
+      #
+      # Example: Strftime::English.encode["MilitaryHours", "Minutes", "Seconds"]
+      # should return "%l%M%S"
+      # So you can use it like: time_obj.strftime( Strftime::English.encode(["MilitaryHours", "Minutes", "Seconds"]) )
+      # another example: time_obj.strftime( Strftime::English.encode("Hours", "Minutes", "Seconds", "AM/PM") )
+    end
+
+    def availiable_encodings
+      # A documentation method: returns the strings for Strftime::English.encode
+    end
 end
 
 class Object
